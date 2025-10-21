@@ -1,6 +1,6 @@
 from binaryninja import *
 
-from .src import regs, utils
+from .src import regs, utils, calling_convention
 
 
 PluginCommand.register(
@@ -10,3 +10,9 @@ PluginCommand.register(
     utils.arch_is_amd64
 )
 
+PluginCommand.register(
+    "OCaml Helper\\Convert to OCaml AMD64 Calling Convention",
+    "Set the calling convention of functions without one to OCaml AMD64",
+    calling_convention.convert_to_ocaml_call_amd64,
+    utils.arch_is_amd64
+)

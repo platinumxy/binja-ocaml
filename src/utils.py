@@ -1,7 +1,6 @@
 from binaryninja import *
 
 def arch_is_amd64(bv:BinaryView) -> bool:
-    
     return bv.arch and bv.arch.name == "x86_64"
 
 
