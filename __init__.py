@@ -17,7 +17,7 @@ PluginCommand.register(
 )
 
 PluginCommand.register(
-    "OCaml Helper\Update Problematic Calls",
+    "OCaml Helper\\Update Problematic Calls",
     "Cleans up GC and stack realloc calls",
     function_cleanup.update_problematic_calls,
     utils.arch_is_ocaml_amd64
@@ -27,4 +27,4 @@ PluginCommand.register(
     "OCaml Helper\\Toggle\\Ignore caml/ocaml mentions when detecting OCaml bins",
     "Ignore caml/ocaml mentions when detecting OCaml bins",
     utils.toggle_ignore_caml_mentions
-)   
+)

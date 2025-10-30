@@ -1,16 +1,17 @@
 from binaryninja import *
 
+
 def update_problematic_calls(bv: BinaryView):
-    
-    # TODO improve the typesig  
+
+    # TODO improve the typesig
     problems = ["caml_call_realloc_stack", "caml_call_gc"]
     void_func_type = FunctionType.create(
         None,
         [],
-        calling_convention= bv.arch.calling_conventions['ocamlcall']
+        calling_convention=bv.arch.calling_conventions['ocamlcall']
     )
     bv.set_analysis_hold(True)
-    
+
     for func_name in problems:
         if func := bv.get_functions_by_name(func_name):
             for f in func:
